@@ -38,7 +38,7 @@ function App() {
   setAudioUrl(null); 
 
     try {
-      const response = await axios.post("https://backend-code-2-xgru.onrender.com", {
+      const response = await axios.post("https://backend-code-2-xgru.onrender.com/ai", {
         prompt: code,
         language: language,
       });
