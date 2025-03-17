@@ -1,12 +1,18 @@
-# React + Vite
+# AI-Powered Code Reviewer 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ It analyzes and provides feedback on code quality, syntax, and logical errors using AI models like Gemini.
 
-Currently, two official plugins are available:
+## Features
+- Code analysis for multiple programming languages
+- AI-powered feedback on syntax, best practices,efficiency and errors
+- Integrated Gemini AI model to recommend improvements for efficiency.
+- Exception handling , readability scoring , time complexity
+- Text to speech review
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+- **Node.js** + **Express.js** (Backend)
+- **MongoDB** (Database)
+- **Mongoose** (ORM)
+- **Gemini AI API** (Code analysis)
+- **OPEN AI API** (Text to speech)
+-  **Prism.js** (Syntax highlighting) 
