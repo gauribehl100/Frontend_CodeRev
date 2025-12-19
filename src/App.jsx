@@ -13,7 +13,6 @@ import './App.css'
 function App() {
   const [code, setCode] = useState(`function sum() { return 1 + 1; }`);
   const [review, setReview] = useState("");
-  const [audioUrl, setAudioUrl] = useState(null);
   const [language, setLanguage] = useState("javascript");
   const [isLoading, setIsLoading] = useState(false); 
 
@@ -35,7 +34,7 @@ function App() {
   async function reviewCode() {
     setIsLoading(true);
     setReview(""); 
-  setAudioUrl(null); 
+  
 
     try {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL ||"https://backend-code-8.onrender.com"}/ai/response`, {
@@ -45,15 +44,7 @@ function App() {
 
       setReview(response.data.text);
 
-      if (response.data.audio) {
-        const byteCharacters = atob(response.data.audio.split(",")[1]);
-        const byteNumbers = new Array(byteCharacters.length)
-          .fill()
-          .map((_, i) => byteCharacters.charCodeAt(i));
-        const byteArray = new Uint8Array(byteNumbers);
-        const audioBlob = new Blob([byteArray], { type: "audio/mpeg" });
-        const audioURL = URL.createObjectURL(audioBlob);
-        setAudioUrl(audioURL);
+     
       }
     } catch (error) {
       console.error("Error fetching review:", error);
@@ -107,16 +98,6 @@ function App() {
             <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
           )}
           
-
-          {audioUrl && (
-            <div className="audio-container">
-              <h3 className="audio-heading">Speech Output:</h3>
-              <audio controls className="custom-audio">
-                <source className="audio" src={audioUrl} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          )}
         </div>
       </main>
     </>
