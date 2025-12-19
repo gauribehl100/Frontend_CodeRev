@@ -46,7 +46,7 @@ function App() {
 
      
       }
-    } catch (error) {
+     catch (error) {
       console.error("Error fetching review:", error);
     } finally {
       setIsLoading(false); 
