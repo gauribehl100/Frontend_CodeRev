@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import "prismjs/themes/prism-tomorrow.css"
 import Editor from "react-simple-code-editor"
-import prism from "prismjs"
+// import prism from "prismjs"
+import Prism from "prismjs"
 import "prismjs/components/prism-java";
 import "prismjs/components/prism-python";
 import Markdown from "react-markdown"
@@ -37,7 +38,7 @@ function App() {
   
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL ||"https://backend-code-10.onrender.com"}/ai/response`, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/ai/response`, {
         prompt: code,
         language: language,
       });
