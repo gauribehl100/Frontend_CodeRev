@@ -38,7 +38,7 @@ function App() {
   setAudioUrl(null); 
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL ||"https://backend-code-5-cit7.onrender.com"}/ai/response`, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL ||"https://backend-code-7.onrender.com"}/ai/response`, {
         prompt: code,
         language: language,
       });
